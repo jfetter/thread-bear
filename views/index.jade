@@ -1,0 +1,36 @@
+doctype html(lang='en')
+html
+  head
+    meta(charset='UTF-8')
+    title Social Login
+    link(rel="stylesheet", href="vendor/bootstrap/dist/css/bootstrap.min.css")
+    link(href='css/style.css', rel='stylesheet')
+  body(ng-app='socialLogin')
+    div.nav.well(ng-controller='navCtrl')
+
+      span(ng-if='!isAuthenticated()')
+
+      span.row.topbar(ng-if='isAuthenticated()')
+        div.col-md-3
+          a.title(ui-sref='login')  Thread Bear
+          p.col-md-12.bearSoul bare your Bear soul
+        img.col-md-3.bear(src="http://i258.photobucket.com/albums/hh273/Mizu73/BESL/bears_v5_besl_zps456e4bf3.png", alt="")
+        a.col-md-2.btn(ui-sref='profile') profile
+        a.col-md-2.btn(ng-click='logout()') logout
+        a.col-md-2.btn(href="http://www.kidzone.ws/lw/bears/facts.htm") bear facts
+
+    ui-view
+
+    script(src='vendor/jquery/dist/jquery.min.js')
+    script(src='vendor/angular/angular.js')
+    script(src='vendor/angular-ui-router/release/angular-ui-router.min.js')
+    script(src='vendor/satellizer/satellizer.min.js')
+    script(src='js/module.js')
+    script(src='js/controllers/login.js')
+    script(src='js/controllers/home.js')
+    script(src='js/controllers/profile.js')
+    script(src='js/controllers/nav.js')
+    script(src='js/controllers/newMessage.js')
+    script(src='js/controllers/viewThread.js')
+    script(src='js/services/userService.js')
+    script(src='js/services/messageService.js')

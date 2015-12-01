@@ -1,0 +1,30 @@
+<div class="row">
+	<h1> {{user.displayName}} </h1>
+	<div>
+	  <img class='avatar' ng-src="{{user.picture}}" alt="">
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		
+		<div class="col-md-3">
+			<h4 class="pack-mates"> Pack Mates	</h4>
+				<ul>
+<!-- 					<li ng-repeat="userx in users">
+						<h3>{{userx.displayName}}</h3>
+						<a class="btn" ng-click="newMessage">Message</a>
+					</li> -->
+				</ul>
+		</div>
+
+		<div class="col-md-9">
+			<h4> Bear Threads </h4>
+			<div ng-repeat="message in myMessages" class="row"> {{message[0]}}	
+			</div>
+			<a ng-click-"viewThread">Add Response</a>
+		</div>
+
+	</div>
+</div>
+
